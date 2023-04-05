@@ -48,9 +48,10 @@ public class HibernateUtils {
             // Begin a unit of work
             session.beginTransaction();
             //ADD
-//            User user = new User("sam", "mas", "sam@gmail.com");
-// 
-//            Group group = new Group("Designer");
+//            User user = new User("teo", "mas", "sam@gmail.com");
+//            
+//            
+////            Group group = new Group("nga");
 //            session.save(group);
 //
 //            UserGroup userGroup = new UserGroup();
@@ -60,7 +61,14 @@ public class HibernateUtils {
 //            userGroup.setRegisteredDate(new Date());
 //
 //            user.addUserGroup(userGroup);
-
+// 
+//            UserGroup userGroup1 = new UserGroup();
+//            userGroup1.setUser(user);
+//            userGroup1.setActivated(true);
+//            userGroup1.setRegisteredDate(new Date());
+//            userGroup1.setGroup((Group) session.get(Group.class, Long.valueOf("3")));
+//            user.addUserGroup(userGroup1);
+//            
 //            session.save(user);
                 
             //ADD2
@@ -79,28 +87,27 @@ public class HibernateUtils {
 //            session.save(userGroup);
 
                 //delete
-//                UserGroup userGroup = new UserGroup();
-//
-//                User user = new User();
-//                user.setId(Long.parseLong("2"));
-//                userGroup.setUser(user);
-//
-//                Group group = new Group();
-//                group.setId(Long.parseLong("3"));
-//                userGroup.setGroup(group);
-//
-//                session.delete(userGroup);
-            //get
-            User user = (User) session.get(User.class, Long.valueOf("2"));
-            
-            System.err.println(user.getUserGroups().get(0).getGroup().getId()+"-----"+user.getUserGroups().get(0).getGroup().getName()+"-----"+user.getUserGroups().get(0).getRegisteredDate());
-            System.err.println(user.getUserGroups().get(1).getGroup().getId()+"-----"+user.getUserGroups().get(1).getGroup().getName()+"-----"+user.getUserGroups().get(1).getRegisteredDate());
-            System.err.println(user.getUserGroups().get(2).getGroup().getId()+"-----"+user.getUserGroups().get(2).getGroup().getName()+"-----"+user.getUserGroups().get(2).getRegisteredDate());
-            
-            
-            
-            
-            session.getTransaction().commit();
-                    
+                UserGroup userGroup = new UserGroup();
+
+                User user = new User();
+                user.setId(Long.parseLong("17"));
+                userGroup.setUser(user);
+
+                Group group = new Group();
+                group.setId(Long.parseLong("3"));
+                userGroup.setGroup(group);
+
+                session.delete(userGroup);
+//            //get
+//            User user = (User) session.get(User.class, Long.valueOf("2"));
+//            
+//            System.err.println(user.getUserGroups().get(0).getGroup().getId()+"-----"+user.getUserGroups().get(0).getGroup().getName()+"-----"+user.getUserGroups().get(0).getRegisteredDate());
+//            System.err.println(user.getUserGroups().get(1).getGroup().getId()+"-----"+user.getUserGroups().get(1).getGroup().getName()+"-----"+user.getUserGroups().get(1).getRegisteredDate());
+//            System.err.println(user.getUserGroups().get(2).getGroup().getId()+"-----"+user.getUserGroups().get(2).getGroup().getName()+"-----"+user.getUserGroups().get(2).getRegisteredDate());
+//            
+//            
+//            
+//            
+          session.getTransaction().commit();                   
     }
 }}
